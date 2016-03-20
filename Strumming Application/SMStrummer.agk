@@ -1,0 +1,13 @@
+
+[projectfiles]
+FILE_0=main.agc;-1
+FILE_1=sou;-1
+FILE_2=Source%2Ffretboard.agc;-1
+FILE_3=Source%2Fdefinitions.agc;-1
+FILE_4=Source%2Frestart.agc;-1
+FILE_5=Source%2Fmoveall.agc;-1
+
+[files]
+
+[project]
+description=
