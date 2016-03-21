@@ -2,20 +2,22 @@ Howto:
 
 1) Find a midi file of the song you want to convert.
 2) Import into MuseScore
-3) Check there is a fixed tempo (e.g. one marked on the music)
+3) Check there is a fixed tempo (e.g. one marked on the music) so that the output speed is 
+   fixed and known.
 4) Adjust the arrangement however you like.
 5) Add all the bar numbers (Style/General/Numbers/Interval) for ease of use later
 6) Mark up from guitar tab - make sure it is the right key.
 7) Transpose it to D major (or possibly G or C) check it works, sounds okay and there 
    are no unworkable chords. It may be playable in the original key if the chords are playable,
    which means you could actually play it to the real song. Playing tunes in anything other than 
-   D (maybe G) on a Merlin is going to be challenging.
+   D (maybe G) on a Merlin is going to be challenging without a 6.5 and/or 1.5 modification.
 8) You now have a marked up document in the right key - the chords transpose with the music.
-9) Export the tune as an MP3.
+9) Export the tune as an MP3. this is your background song which will play along behind  you.
 10) Create a text file with the markup in, of this format.
 
-(this is for Please please me, by the Beatles in D Major)
-
+; 
+;	Mark up for Please Please Me, transposed to D major.
+;
 ;
 ;	Firstly general information. 
 ;
@@ -29,7 +31,7 @@ pattern = V.V.V.V.								; strum pattern
 ;	5,0,5 which is played once, it is worth experimenting with this. Gm is also iffy. It is
 ; 	because of the "off key" C'mon C'mon progression in the song.
 ;
-D=0,0,2
+D=0,0,2											; this is the bass string first.
 G=3,1,0
 F=5,0,5
 A7=4,4,3

@@ -1,3 +1,6 @@
+; 
+;	Mark up for Please Please Me, transposed to D major.
+;
 ;
 ;	Firstly general information. 
 ;
@@ -12,7 +15,7 @@ music = pleasepleaseme.mp3 						; the name of mp3 file, same directory as .merl
 ;	5,0,5 which is played once, it is worth experimenting with this. Gm is also iffy. It is
 ; 	because of the "off key" C'mon C'mon progression in the song.
 ;
-D=0,0,2
+D=0,0,2											; this is the bass string first.
 G=3,1,0
 F=5,0,5
 A7=4,4,3
@@ -40,4 +43,3 @@ Bm=2,1,0
 14:G
 15:A7
 16:D
-
