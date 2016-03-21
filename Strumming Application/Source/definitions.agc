@@ -16,11 +16,11 @@
 
 #constant  	FRETHEIGHT	370																			// Fret Height
 #constant	FRETY 		300																			// Fret Position
-#constant 	CONTROLY	40																			// Where the pattern control buttons are
+#constant 	CONTROLY	100																			// Where the pattern control buttons are
 #constant 	USERY 		690 																		// Where the user control buttons are
 #constant 	TIMERPOINT	140 																		// Point where the ball is.
 #constant 	BARWIDTH 	600 																		// Bar widths
-#constant 	PATHHEIGHT 	300 																		// Height of path
+#constant 	PATHHEIGHT 	250 																		// Height of path
 #constant 	BARCREATE 	3 																			// Number of complete bars to create
 #constant 	BALLSIZE 	40
 
@@ -33,9 +33,13 @@
 #constant 	IMGPATHTEMP	3101 																		// Working Image Path
 #constant 	SPRBALL 	3003 																		// Ball sprite
 #constant 	TXTMSG 		3004 																		// Text Message
+#constant  	IMGFONT 	3005 																		// Font image 
+#constant 	TXTTEMPO	3006 																		// Tempo Text
 
-#constant 	CTRLBTNS	7																			// Number of control buttons
-#constant	FASTER_BTN	4000																		// Button sprite IDs
+#constant 	FIRST_BTN	4000																		// Button range
+#constant	LAST_BTN 	4006
+
+#constant	FASTER_BTN	4000																		// Button sprite IDs, also command IDs
 #constant	SLOWER_BTN	4001
 #constant 	START_BTN	4002
 #constant 	STOP_BTN	4003

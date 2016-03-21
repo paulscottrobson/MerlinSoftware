@@ -38,17 +38,21 @@ function CreateFretboardDisplay(ctl ref as Control)
 	for i = 1 to ctl.strumsPerBar
 		spc = WIDTH/(ctl.strumsPerBar+1)
 		btn = CreateSprite(BTNSTRUM+1)
-		SetSpriteDepth(btn,97)
+		SetSpriteDepth(btn,5)
 		SetSpriteSize(btn,spc*98/100,spc)
 		SetSpritePosition(btn,(i-1)*spc+(WIDTH-spc*ctl.strumsPerBar)/2,CONTROLY)
 		ctl.patternButtons[i] = btn
+		txt = CreateText(str(i))
+		SetTextSize(txt,26.0)
+		SetTextPosition(txt,GetSpriteX(btn)+GetSpriteWidth(btn)/2-GetTextTotalWidth(txt)/2,GetSpriteY(btn)-GetTextTotalHeight(txt))
+		SetTextDepth(btn,6)
 	next i
-	UpdatePattern(ctl)																				// Put whatever default pattern in.
 	LoadImage(IMGBAR,GFXDIR+"barmarker.png")
 	LoadImage(IMGBALL,GFXDIR+"red.png")
 	LoadImage(IMGARROW,GFXDIR+"arrow.png")
 	CreateSprite(SPRBALL,IMGBALL)
 	SetSpriteSize(SPRBALL,BALLSIZE,BALLSIZE)
+	SetSpriteDepth(SPRBALL,4)
 	
 	__FBCreateButton("btnFaster.png",FASTER_BTN,0)													// Control buttons
 	__FBCreateButton("btnSlower.png",SLOWER_BTN,1)
@@ -63,9 +67,16 @@ function CreateFretboardDisplay(ctl ref as Control)
 	SetSpritePosition(frm,50,USERY+GetSpriteHeight(FASTER_BTN)/2-GetSpriteHeight(frm)/2)
 	SetSpriteDepth(frm,97)
 	
-	CreateText(TXTMSG,"Written by Paul Robson 2016 (paul@robsons.org.uk)")
+	CreateText(TXTTEMPO,"120 BPM")																	// Tempo label
+	SetTextSize(TXTTEMPO,64.0)
+	SetTextColor(TXTTEMPO,255,255,0,255)
+	
+	CreateText(TXTMSG,"Written by Paul Robson 2016 (paul@robsons.org.uk)")							// Info
 	SetTextSize(TXTMSG,WIDTH/50.0)
-	SetTextPosition(TXTMSG,WIDTH/2-GetTextTotalWidth(TXTMSG)/2,HEIGHT-2-GetTextTotalHeight(TXTMSG))
+	SetTextPosition(TXTMSG,WIDTH/2-GetTextTotalWidth(TXTMSG)/2,HEIGHT-8-GetTextTotalHeight(TXTMSG))
+	
+	UpdatePattern(ctl)																				// Put whatever default pattern in.
+
 endfunction
 
 // ******************************************************************************************************************
@@ -78,6 +89,8 @@ function UpdatePattern(ctl ref as Control)
 	for i = 1 to ctl.strumsPerBar
 		SetSpriteImage(ctl.patternButtons[i],BTNSTRUM+ctl.pattern[i])
 	next i
+	SetTextString(TXTTEMPO,str(ctl.tempo)+" BPM")
+	SetTextPosition(TXTTEMPO,WIDTH-16-GetTextTotalWidth(TXTTEMPO),6)
 endfunction
 
 // ******************************************************************************************************************
@@ -91,6 +104,6 @@ function __FBCreateButton(imgName as string,id as integer,n as integer)
 	sw = WIDTH-300
 	SetSpriteSize(id,sw/10,sw/20)
 	SetSpritePosition(id,n*sw/10+150,USERY)
-	SetSpriteDepth(id,96)
+	SetSpriteDepth(id,5)
 endfunction
 
