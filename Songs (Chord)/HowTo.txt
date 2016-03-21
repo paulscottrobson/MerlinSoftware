@@ -1,4 +1,4 @@
-Howto:
+How to:
 
 1) Find a midi file of the song you want to convert.
 2) Import into MuseScore
@@ -15,21 +15,22 @@ Howto:
 9) Export the tune as an MP3. this is your background song which will play along behind  you.
 10) Create a text file with the markup in, of this format.
 
-; 
-;	Mark up for Please Please Me, transposed to D major.
-;
+; 	******************************************************************************************************
+;							Mark up for Please Please Me, transposed to D major.
+; 	******************************************************************************************************
 ;
 ;	Firstly general information. 
 ;
 tempo = 138										; tempo as set in muse score
 beats = 4										; beats per bar
 bars = 16										; bars in total (not intro)
-intro = 1										; blank bars as lead in required
 pattern = V.V.V.V.								; strum pattern
+music = pleasepleaseme.mp3 						; the name of mp3 file, same directory as .merlin file.
 ;
 ;	Then define the chords. These are a mix but are dulcimer chords. The dodgy one is F
 ;	5,0,5 which is played once, it is worth experimenting with this. Gm is also iffy. It is
-; 	because of the "off key" C'mon C'mon progression in the song.
+; 	because of the "off key" C'mon C'mon progression in the song. Actually this song was better
+; 	in E for strummng (chords are E,A,B7,C#m,F#m,G). But it's an example.
 ;
 D=0,0,2											; this is the bass string first.
 G=3,1,0

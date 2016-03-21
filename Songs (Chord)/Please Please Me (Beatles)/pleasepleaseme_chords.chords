@@ -1,13 +1,12 @@
-; 
-;	Mark up for Please Please Me, transposed to D major.
-;
+; 	******************************************************************************************************
+;							Mark up for Please Please Me, transposed to D major.
+; 	******************************************************************************************************
 ;
 ;	Firstly general information. 
 ;
 tempo = 138										; tempo as set in muse score
 beats = 4										; beats per bar
 bars = 16										; bars in total (not intro)
-intro = 1										; blank bars as lead in required
 pattern = V.V.V.V.								; strum pattern
 music = pleasepleaseme.mp3 						; the name of mp3 file, same directory as .merlin file.
 ;
