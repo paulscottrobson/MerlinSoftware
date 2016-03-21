@@ -1,0 +1,43 @@
+;
+;	Firstly general information. 
+;
+tempo = 138										; tempo as set in muse score
+beats = 4										; beats per bar
+bars = 16										; bars in total (not intro)
+intro = 1										; blank bars as lead in required
+pattern = V.V.V.V.								; strum pattern
+music = pleasepleaseme.mp3 						; the name of mp3 file, same directory as .merlin file.
+;
+;	Then define the chords. These are a mix but are dulcimer chords. The dodgy one is F
+;	5,0,5 which is played once, it is worth experimenting with this. Gm is also iffy. It is
+; 	because of the "off key" C'mon C'mon progression in the song.
+;
+D=0,0,2
+G=3,1,0
+F=5,0,5
+A7=4,4,3
+Gm=3,3,3
+Em=1,1,1
+Bm=2,1,0
+;
+;	Finally the music. These are beats-bars and chords. 3 is shorthand for bar 3 beat 1
+;	3.3 means bar 3 beat 3. This is why you put the bar numbers on on MuseScore :)
+;
+1:D
+3:G
+3.3:D
+4:F
+4.2:G
+4.3:A7
+5:D
+7:G
+7.3:D
+9:Gm
+10:Em
+11:Bm
+12:G
+13:D
+14:G
+15:A7
+16:D
+
