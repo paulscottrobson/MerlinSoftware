@@ -1,9 +1,9 @@
-tempo=138
+; automatically generated do not edit directlytempo=138
 bars=16
 beats=4
 music=pleasepleaseme.mp3
 format=1
-tuning=DAd
+tuning=dad
 0:0,0,2,d
 4:0,0,2,d
 8:0,0,2,d
