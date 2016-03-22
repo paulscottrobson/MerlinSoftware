@@ -28,6 +28,7 @@ LoadSound(SND_CHORD,SFXDIR+"chord.wav")
 LoadImage(IMGFONT,GFXDIR+"font.png")
 SetTextDefaultFontImage(IMGFONT)
 
+
 global ctl as Control
 ctl.strumsPerBar = 8
 ctl.tempo = 100

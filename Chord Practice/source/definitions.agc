@@ -21,6 +21,12 @@
 #constant CHORDID 		1002 																		// ID for chord
 #constant TEXTID 		1003 																		// ID for text
 #constant CLOCKID 		1004 																		// Clock
+#constant TXTMSG 		1005
+
+#constant BTN_FASTER	2000 																		// Control Buttons
+#constant BTN_SLOWER 	2001 
+#constant BTN_SKILL 	2003
+#constant BTN_RESTART 	2005 
 
 #constant LVL_EASY 		1																			// Level constants
 #constant LVL_MEDIUM 	2
