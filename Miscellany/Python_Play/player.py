@@ -54,7 +54,7 @@ def update(dt):																		# Callback function
 	songPlayer.nextQuarterBeat(wavPlayer)
 
 sourceFile = "..\\..\\Songs (Note)\\Hey Jude (Beatles)\\heyjude.merlin"				# Playing this
-
+sourceFile = "..\\..\\Songs (Chord)\\Please Please Me (Beatles)\\pleasepleaseme_chords.merlin"
 
 wavPlayer = Player()																# Create player
 songPlayer = Song(sourceFile)														# Create song source object
