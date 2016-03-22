@@ -137,5 +137,5 @@ class FingerMerlin(Merlin):
 				strum.append(m.group(4) if m.group(4) != "" else "x")					# add chord
 				self.song[pos] = ",".join(strum)										# add to song data.
 
-x = ChordMerlin("pleasepleaseme_chords.chords")
-#x = FingerMerlin("heyjude.notes")
+#x = ChordMerlin("pleasepleaseme_chords.chords")
+x = FingerMerlin("heyjude.notes")
