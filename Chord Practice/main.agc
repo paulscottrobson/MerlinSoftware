@@ -9,8 +9,6 @@
 // ******************************************************************************************************************
 // ******************************************************************************************************************
 
-#constant BUILD 		1
-
 #include "source/definitions.agc"
 #include "source/chordimages.agc"
 #include "source/loader.agc"
@@ -20,7 +18,7 @@
 global game as Game
 global debug as string
 
-SetWindowTitle( "Seagull Merlin Chord Trainer (Build "+str(BUILD)+")" )
+SetWindowTitle("Seagull Merlin Chord Trainer")
 SetWindowSize(WIDTH,HEIGHT,0)
 SetVirtualResolution(WIDTH,HEIGHT)
 SetOrientationAllowed(0,0,1,1)

@@ -8,12 +8,10 @@ FILE_4=Source%2Fmoveall.agc;-1
 FILE_5=Source%2Fcontrol.agc;-1
 
 [files]
-FILE_NAME_0=0;main.agc;1581;0
-FILE_NAME_1=0;Source%2Ffretboard.agc;2522;1
-FILE_NAME_2=0;Source%2Fdefinitions.agc;1217;2
-FILE_NAME_3=0;Source%2Frestart.agc;2319;4
-FILE_NAME_4=0;Source%2Fmoveall.agc;2957;5
-FILE_NAME_5=0;Source%2Fcontrol.agc;2622;3
+FILE_NAME_0=0;main.agc;824;0
+FILE_NAME_1=0;Source%2Ffretboard.agc;2292;2
+FILE_NAME_2=0;Source%2Frestart.agc;2319;3
+FILE_NAME_3=1;Source%2Fcontrol.agc;1452;1
 
 [project]
 description=

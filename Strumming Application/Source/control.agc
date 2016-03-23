@@ -15,7 +15,9 @@ function ProcessCommand(ctl ref as Control)
 	if GetPointerPressed() <> 0 																	// Mouse or tap
 		id = GetSpriteHit(GetPointerX(),GetPointerY())												// What's there ?
 		for i = 1 to ctl.strumsPerBar																// Check pattern buttons
-			if id = ctl.patternButtons[i] then command = i											// 1..n are pattern buttons
+			if GetSpriteHittest(ctl.patternButtons[i],GetPointerX(),GetPointerY()) <> 0 			// 1..n are pattern buttons
+				 command = i											
+			endif
 		next i
 		if id >= FIRST_BTN and id <= LAST_BTN then command = id 									// Control buttons.
 	endif

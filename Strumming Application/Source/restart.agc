@@ -36,7 +36,7 @@ function Restart(ctl ref as Control)
 		SetSpriteSize(id,BARWIDTH,PATHHEIGHT)
 		SetSpritePosition(id,barToDraw*BARWIDTH+TIMERPOINT,FRETY-GetSpriteHeight(id))				// Put in correct place
 		SetSpriteTransparency(id,1)																	// Makes the created sprite transparent
-		SetSpriteDepth(id,5)
+		SetSpriteDepth(id,2)
 		
 		if barToDraw > 0																			// No arrows at the start
 			for strum = 1 to ctl.strumsPerBar														// Check all strum.

@@ -38,21 +38,21 @@ function CreateFretboardDisplay(ctl ref as Control)
 	for i = 1 to ctl.strumsPerBar
 		spc = WIDTH/(ctl.strumsPerBar+1)
 		btn = CreateSprite(BTNSTRUM+1)
-		SetSpriteDepth(btn,5)
+		SetSpriteDepth(btn,2)
 		SetSpriteSize(btn,spc*98/100,spc)
 		SetSpritePosition(btn,(i-1)*spc+(WIDTH-spc*ctl.strumsPerBar)/2,CONTROLY)
 		ctl.patternButtons[i] = btn
 		txt = CreateText(str(i))
 		SetTextSize(txt,26.0)
 		SetTextPosition(txt,GetSpriteX(btn)+GetSpriteWidth(btn)/2-GetTextTotalWidth(txt)/2,GetSpriteY(btn)-GetTextTotalHeight(txt))
-		SetTextDepth(btn,6)
+		SetTextDepth(btn,3)
 	next i
 	LoadImage(IMGBAR,GFXDIR+"barmarker.png")
 	LoadImage(IMGBALL,GFXDIR+"red.png")
 	LoadImage(IMGARROW,GFXDIR+"arrow.png")
 	CreateSprite(SPRBALL,IMGBALL)
 	SetSpriteSize(SPRBALL,BALLSIZE,BALLSIZE)
-	SetSpriteDepth(SPRBALL,4)
+	SetSpriteDepth(SPRBALL,1)
 	
 	__FBCreateButton("btnFaster.png",FASTER_BTN,0)													// Control buttons
 	__FBCreateButton("btnSlower.png",SLOWER_BTN,1)
