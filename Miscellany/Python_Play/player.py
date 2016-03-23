@@ -41,7 +41,7 @@ class Player:
 		self.tuning = base
 
 		for i in range(1,16):
-			self.notes.append(pyglet.resource.media(str(i)+".wav",streaming = False))
+			self.notes.append(pyglet.resource.media("wav/"+str(i)+".wav",streaming = False))
 
 	def play(self,frets = [0,0,0]):
 		for i in range(0,self.channels):
@@ -54,10 +54,20 @@ def update(dt):																		# Callback function
 	songPlayer.nextQuarterBeat(wavPlayer)
 
 sourceFile = "..\\..\\Songs (Note)\\Hey Jude (Beatles)\\heyjude.merlin"				# Playing this
-#sourceFile = "..\\..\\Songs (Chord)\\Please Please Me (Beatles)\\pleasepleaseme_chords.merlin"
+sourceFile = "..\\..\\Songs (Chord)\\Please Please Me (Beatles)\\pleasepleaseme_chords.merlin"
 
 wavPlayer = Player()																# Create player
 songPlayer = Song(sourceFile)														# Create song source object
+
+backTune = songPlayer.config["music"]
+if backTune != "":
+	#backTune = sourceFile[:sourceFile.rfind("\\")]+"\\"+backTune
+	#backTune = backTune.replace("\\","/")
+	#print(backTune)
+	player = pyglet.resource.media(backTune,streaming = False)
+	player.play()
+
+print(songPlayer.config["tempo"])
 quarterBeatTime = 60.0 / songPlayer.config["tempo"] / 4.0 							# time for a quarter beat
 pyglet.clock.schedule_interval(update, quarterBeatTime)								# fire update continually.
 
