@@ -18,6 +18,7 @@
 function Process(g ref as Game,dt as integer)
 	
 	ms = GetMilliseconds()
+	
 	select g.currentState
 		
 		case EVT_SCROLLIN:
@@ -34,7 +35,7 @@ function Process(g ref as Game,dt as integer)
 		endcase
 			
 		case EVT_WAIT:
-			if ms > g.nextStateTime
+			if ms > g.nextStateTime and g.isPaused = 0
 				g.currentState = EVT_SCROLLOUT
 			endif
 		endcase

@@ -8,6 +8,12 @@ FILE_4=source%2Fprocess.agc;-1
 FILE_5=source%2Fcommand.agc;-1
 
 [files]
+FILE_NAME_0=0;main.agc;797;0
+FILE_NAME_1=0;source%2Fdefinitions.agc;2401;1
+FILE_NAME_2=1;source%2Fchordimages.agc;2356;5
+FILE_NAME_3=0;source%2Floader.agc;0;2
+FILE_NAME_4=0;source%2Fprocess.agc;1436;3
+FILE_NAME_5=0;source%2Fcommand.agc;1686;4
 
 [project]
 description=

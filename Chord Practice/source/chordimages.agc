@@ -51,9 +51,9 @@ function CreateChordGraphics(chord ref as ChordDef)
 			__CIDrawFinger(MakeColor(255,128,0),xString[stn],yFret[chord.barre])
 		next stn
 	endif
-	if chord.frets[0] > 0 then __CIDrawFinger(MakeColor(255,0,0),xString[0],yFret[chord.frets[0]])
-	if chord.frets[1] > 0 then __CIDrawFinger(MakeColor(0,128,255),xString[1],yFret[chord.frets[1]])
-	if chord.frets[2] > 0 then __CIDrawFinger(MakeColor(255,255,0),xString[2],yFret[chord.frets[2]])
+	if chord.frets[0] > chord.barre then __CIDrawFinger(MakeColor(255,0,0),xString[0],yFret[chord.frets[0]])
+	if chord.frets[1] > chord.barre then __CIDrawFinger(MakeColor(0,128,255),xString[1],yFret[chord.frets[1]])
+	if chord.frets[2] > chord.barre then __CIDrawFinger(MakeColor(255,255,0),xString[2],yFret[chord.frets[2]])
 	SetRenderToScreen()	
 	Render()
 	imageID = CopyImage(TEMPIMAGEID,0,0,512/3,384)													// Take a sub part

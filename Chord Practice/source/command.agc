@@ -23,6 +23,8 @@ function ProcessCommand(g ref as Game)
 		if GetRawKeyPressed(asc("F")) <> 0 then command = BTN_FASTER
 		if GetRawKeyPressed(asc("S")) <> 0 then command = BTN_SLOWER
 		if GetRawKeyPressed(asc("D")) <> 0 then command = BTN_SKILL
+		if GetRawKeyPressed(asc("G")) <> 0 then command = BTN_START
+		if GetRawKeyPressed(asc("H")) <> 0 then command = BTN_STOP
 	endif
 	if GetPointerPressed() <> 0 
 		command = GetSpriteHit(GetPointerX(),GetPointerY())
@@ -30,8 +32,15 @@ function ProcessCommand(g ref as Game)
 	endif
 	
 	select command
+		case BTN_STOP
+			g.isPaused = 1
+		endcase
+		case BTN_START
+			g.isPaused = 0
+		endcase
 		case BTN_RESTART
 			ResetGame(g)
+			g.isPaused = 0
 		endcase
 		case BTN_FASTER
 			if g.speed > 0 then dec g.speed

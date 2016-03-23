@@ -26,7 +26,9 @@
 #constant BTN_FASTER	2000 																		// Control Buttons
 #constant BTN_SLOWER 	2001 
 #constant BTN_SKILL 	2003
-#constant BTN_RESTART 	2005 
+#constant BTN_START		2005
+#constant BTN_STOP		2006
+#constant BTN_RESTART 	2008 
 
 #constant LVL_EASY 		1																			// Level constants
 #constant LVL_MEDIUM 	2
@@ -54,5 +56,6 @@ type Game
 	startMilliseconds as integer 																	// When we started
 	currentState as integer																			// Current state
 	nextStateTime as integer 																		// Time something next happens.
+	isPaused as integer 																			// True if paused.
 	currentChord as integer
 endtype

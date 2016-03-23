@@ -28,7 +28,7 @@ SetSpriteSize(BACKGROUND,WIDTH,HEIGHT)
 SetSpriteDepth(BACKGROUND,99)
 SetTextDefaultFontImage(LoadImage(GFXDIR+"font.png"))
 
-game.skillLevel = LVL_HARD
+game.skillLevel = LVL_EASY
 game.speed = 9
 LoadChords(game.chords)
 ResetGame(game)
@@ -52,6 +52,8 @@ CreateSprite(BTN_FASTER,LoadImage(GFXDIR+"btnFaster.png"))
 CreateSprite(BTN_SLOWER,LoadImage(GFXDIR+"btnSlower.png"))
 CreateSprite(BTN_SKILL,LVL_EASY)
 CreateSprite(BTN_RESTART,LoadImage(GFXDIR+"btnRestart.png"))
+CreateSprite(BTN_START,LoadImage(GFXDIR+"btnStart.png"))
+CreateSprite(BTN_STOP,LoadImage(GFXDIR+"btnStop.png"))
 
 CreateText(TXTMSG,"Written by Paul Robson 2016 (paul@robsons.org.uk)")							// Info
 SetTextSize(TXTMSG,WIDTH/50.0)
@@ -59,9 +61,9 @@ SetTextPosition(TXTMSG,WIDTH/2-GetTextTotalWidth(TXTMSG)/2,HEIGHT-8-GetTextTotal
 
 for i = BTN_FASTER to BTN_RESTART
 	if GetSpriteExists(i) <> 0
-		SetSpriteSize(i,WIDTH/8,80)
-		x = (i - BTN_FASTER + 1) * WIDTH / 7
-		SetSpritePosition(i,x-GetSpriteWidth(i)/2,655)
+		SetSpriteSize(i,WIDTH/11,60)
+		x = (i - BTN_FASTER + 1) * WIDTH / 10
+		SetSpritePosition(i,x-GetSpriteWidth(i)/2,665)
 	endif
 next i
 
