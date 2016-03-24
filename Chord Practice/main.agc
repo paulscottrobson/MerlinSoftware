@@ -9,6 +9,9 @@
 // ******************************************************************************************************************
 // ******************************************************************************************************************
 
+// TODO: Add G notes
+// TODO: Add G/D button
+
 #include "source/definitions.agc"
 #include "source/chordimages.agc"
 #include "source/loader.agc"
@@ -30,6 +33,7 @@ SetTextDefaultFontImage(LoadImage(GFXDIR+"font.png"))
 
 game.skillLevel = LVL_EASY
 game.speed = 9
+game.merlinType = 1
 LoadChords(game.chords)
 ResetGame(game)
 
@@ -42,11 +46,13 @@ SetTextPosition(TEXTID,50,40)
 SetTextColor(TEXTID,255,255,0,255)
 CreateText(CLOCKID,"00:00")
 SetTextSize(CLOCKID,80.0)
-SetTextColor(CLOCKID,255,0,0,255)
+SetTextColor(CLOCKID,0,255,255,255)
 
 LoadImage(LVL_EASY,GFXDIR+"btnEasy.png")
 LoadImage(LVL_MEDIUM,GFXDIR+"btnMedium.png")
 LoadImage(LVL_HARD,GFXDIR+"btnHard.png")
+LoadImage(TUN_D,GFXDIR+"btnDMerlin.png")
+LoadImage(TUN_G,GFXDIR+"btnGMerlin.png")
 
 CreateSprite(BTN_FASTER,LoadImage(GFXDIR+"btnFaster.png"))
 CreateSprite(BTN_SLOWER,LoadImage(GFXDIR+"btnSlower.png"))
@@ -54,6 +60,7 @@ CreateSprite(BTN_SKILL,LVL_EASY)
 CreateSprite(BTN_RESTART,LoadImage(GFXDIR+"btnRestart.png"))
 CreateSprite(BTN_START,LoadImage(GFXDIR+"btnStart.png"))
 CreateSprite(BTN_STOP,LoadImage(GFXDIR+"btnStop.png"))
+CreateSprite(BTN_TUNING,TUN_D)
 
 CreateText(TXTMSG,"Written by Paul Robson 2016 (paul@robsons.org.uk)")							// Info
 SetTextSize(TXTMSG,WIDTH/50.0)
@@ -61,8 +68,8 @@ SetTextPosition(TXTMSG,WIDTH/2-GetTextTotalWidth(TXTMSG)/2,HEIGHT-8-GetTextTotal
 
 for i = BTN_FASTER to BTN_RESTART
 	if GetSpriteExists(i) <> 0
-		SetSpriteSize(i,WIDTH/11,60)
-		x = (i - BTN_FASTER + 1) * WIDTH / 10
+		SetSpriteSize(i,WIDTH/9,60)
+		x = (i - BTN_FASTER + 1) * WIDTH / 8
 		SetSpritePosition(i,x-GetSpriteWidth(i)/2,665)
 	endif
 next i

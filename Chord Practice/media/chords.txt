@@ -1,28 +1,30 @@
 ;
 ;		Chords subdivided by groups. Bass,Middle,Melody. *x,a,b,c is a barre on x
 ;
+;		Amended 24/3/16. The first chord is a D Merlin chord, the second a G Merlin chord
+;
 @easy
-D = 2,0,0
-A = 1,0,1
-G = 3,1,0
+D/G = 2,0,0
+A/D = 1,0,1
+G/C = 3,1,0
 
 @medium
-Em = *1,0,0,3
-Bm = 2,1,0
-E = *1,0,0,0
-F# = *2,0,0,0
-F#m = *2,0,0,4
-A7 = 4,4,3
-D7 = 5,0,0
-B = *5,0,0,0
-Dm = 0,0,0
+Em/Am = *1,0,0,3
+Bm/Em = 2,1,0
+E/A = *1,0,0,0
+F#/B = *2,0,0,0
+F#m/Bm = *2,0,0,4
+A7/D7 = 4,4,3
+D7/G7 = 5,0,0
+B/E = *5,0,0,0
+Dm/Gm = 0,0,0
 
 @hard
-Bb = 4,0,4
-C# = *7,0,0,0
-C#m = 5,7,7
-E7 = 1,1,0
-F = 5,0,5
-F# = *2,0,0,0
-F#m = *2,0,0,4
-B7 = 5,5,4
+Bb/Eb = 4,0,4
+C#/F# = *7,0,0,0
+C#m/F#m = 5,7,7
+E7/A7 = 1,1,0
+F/A# = 5,0,5
+F#/B = *2,0,0,0
+F#m/Bm = *2,0,0,4
+B7/E7 = 5,5,4

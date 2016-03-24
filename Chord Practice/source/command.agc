@@ -25,6 +25,7 @@ function ProcessCommand(g ref as Game)
 		if GetRawKeyPressed(asc("D")) <> 0 then command = BTN_SKILL
 		if GetRawKeyPressed(asc("G")) <> 0 then command = BTN_START
 		if GetRawKeyPressed(asc("H")) <> 0 then command = BTN_STOP
+		if GetRawKeyPressed(asc("T")) <> 0 then command = BTN_TUNING
 	endif
 	if GetPointerPressed() <> 0 
 		command = GetSpriteHit(GetPointerX(),GetPointerY())
@@ -37,6 +38,12 @@ function ProcessCommand(g ref as Game)
 		endcase
 		case BTN_START
 			g.isPaused = 0
+		endcase
+		case BTN_TUNING:
+			g.merlinType = 3 - g.merlinType
+			if g.merlinType = 1 then SetSpriteImage(BTN_TUNING,TUN_D)
+			if g.merlinType = 2 then SetSpriteImage(BTN_TUNING,TUN_G)
+			ResetGame(g)
 		endcase
 		case BTN_RESTART
 			ResetGame(g)

@@ -28,9 +28,9 @@ function Process(g ref as Game,dt as integer)
 				g.currentState = EVT_WAIT
 				g.xDisplay = WIDTH / 2
 				g.nextStateTime = ms+(g.speed+1) * 500
-				PlaySound(1+g.chords[g.currentChord].frets[0])
-				PlaySound(5+g.chords[g.currentChord].frets[1])
-				PlaySound(8+g.chords[g.currentChord].frets[2])
+				__PRPlaySound(g,1+g.chords[g.currentChord].frets[0])
+				__PRPlaySound(g,5+g.chords[g.currentChord].frets[1])
+				__PRPlaySound(g,8+g.chords[g.currentChord].frets[2])
 			endif
 		endcase
 			
@@ -59,11 +59,27 @@ function Process(g ref as Game,dt as integer)
 				until c <> g.currentChord and g.chords[c].skill <= g.skillLevel
 				g.currentChord = c
 				SetSpriteImage(CHORDID,g.chords[c].chordImage)
-				SetTextString(TEXTID,g.chords[c].name)
+				name$ = GetStringToken(g.chords[c].name,"/",g.merlinType)
+				SetTextString(TEXTID,Upper(left(name$,1))+Lower(mid(name$,2,99)))
 			endif
 		endcase
 
 	endselect
 	SetSpritePosition(CHORDID,g.xDisplay - GetSpriteWidth(CHORDID)/2,GetSpriteY(CHORDID))
 	SetTextPosition(TEXTID,g.xDisplay-GetTextTotalWidth(TEXTID)/2,GetTextY(TEXTID))
+endfunction
+
+// ******************************************************************************************************************
+//
+//									Play Sound re-tuned for G if needed
+//
+// ******************************************************************************************************************
+
+function __PRPlaySound(g ref as Game,note as integer)
+	if g.merlinType = 2
+		note = note + 3																				// Start 3 notes up (D,E,F,G)
+		if note = 7 then note = 20 																	// Make C Naturals
+		if note = 14 then note = 19
+	endif
+	PlaySound(note)
 endfunction

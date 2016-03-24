@@ -25,10 +25,11 @@
 
 #constant BTN_FASTER	2000 																		// Control Buttons
 #constant BTN_SLOWER 	2001 
-#constant BTN_SKILL 	2003
-#constant BTN_START		2005
-#constant BTN_STOP		2006
-#constant BTN_RESTART 	2008 
+#constant BTN_SKILL 	2002
+#constant BTN_TUNING	2003
+#constant BTN_START		2004
+#constant BTN_STOP		2005
+#constant BTN_RESTART 	2006 
 
 #constant LVL_EASY 		1																			// Level constants
 #constant LVL_MEDIUM 	2
@@ -39,6 +40,9 @@
 #constant EVT_WAIT 		3 																			// Delay
 #constant EVT_SCROLLOUT	4 																			// Scroll chord out
 #constant EVT_WAITNEXT 	5 																			// Wait for next
+
+#constant TUN_D			3000
+#constant TUN_G 		3001
 
 type ChordDef																						// Define one chord
 	name as string
@@ -57,5 +61,6 @@ type Game
 	currentState as integer																			// Current state
 	nextStateTime as integer 																		// Time something next happens.
 	isPaused as integer 																			// True if paused.
-	currentChord as integer
+	currentChord as integer																			// Current chord displayed
+	merlinType as integer 																			// Merlin type (1 = D,2 = G)
 endtype
