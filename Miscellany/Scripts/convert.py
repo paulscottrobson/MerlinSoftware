@@ -18,8 +18,9 @@ import re
 # ******************************************************************************************************************
 
 class Merlin:
-	def __init__(self,sourceFile):
+	def __init__(self,sourceFile,strings = 3):
 		self.sourceFile = sourceFile													# save source name
+		self.string = 3																	# save number of strings
 		src = open(sourceFile).readlines()												# Read in source file
 		src = [x if x.find(";") < 0 else x[:x.find(";")] for x in src]					# Remove comments
 		src = [x.replace("\t","").replace(" ","").lower().strip() for x in src]			# Remove spaces, tabs, lower case
@@ -100,10 +101,13 @@ class ChordMerlin(Merlin):
 				if not self.song[i][1]:													# only show first switch.
 					chordName = "x"
 				cTest = chord.split(",")												# validate the spec.		
-				assert len(cTest) == 3,"Bad chord "+chord								# 3 entries
+				assert len(cTest) == self.strings,"Bad chord "+chord					# right number of string entries
 				for fret in cTest:														# Frets are 0-7 or x
-					assert re.match("^[0-7x]$",fret) is not None,"Bad chord"+chord			
+					assert re.match(self.getFretMatch(),fret) is not None,"Bad chord"+chord			
 				self.song[i] = chord+","+chordName										# Positions are quarter beats.
+
+	def getFretMatch(self):
+		return "^[0-7x]$"
 
 # ******************************************************************************************************************
 #			
@@ -133,7 +137,7 @@ class FingerMerlin(Merlin):
 						beat = beat + 1
 				assert beat < self.beats * 4,"Bad note position in bar "+s 				# validate this position.
 				pos = (currentBar - 1) * self.beats * 4 + beat 							# position of strum in song.
-				strum = [x for x in ("xxx"+m.group(3))[-3:]]							# make a list of strums, adding in no strum
+				strum = [x for x in ("xxx"+m.group(3))[-self.strings:]]					# make a list of strums, adding in no strum
 				strum.append(m.group(4) if m.group(4) != "" else "x")					# add chord
 				self.song[pos] = ",".join(strum)										# add to song data.
 
